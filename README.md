@@ -39,7 +39,7 @@ All of the following scripts are available in the `scripts/` folder of this repo
 * `viruses_cov-threshold.R`
 * `viruses_clustering_venn.R`
 
-### Diversity analysis
+### Taxonomic diversity analysis
 
 * `mapping_cutoffs.R`
 * `mapping_kingdom-classification.R`
