@@ -7,6 +7,8 @@ Data available in: http://ftp.ebi.ac.uk/pub/databases/metagenomics/genome_sets/l
 
 [VirSearch](https://github.com/alexmsalmeida/virsearch) - Searching viral sequences in metagenomes
 
+[GubaScreen](https://github.com/alexmsalmeida/gubascreen) - Protocol for detecting Gubaphage genomes among a set of predicted viral sequences
+
 [MAGscreen](https://github.com/alexmsalmeida/magscreen) - Workflow for the identification and curation of new microbial species
 
 [metaMAP](https://github.com/alexmsalmeida/metamap) - Mapping sequencing reads to reference genomes for detecting microbial species
