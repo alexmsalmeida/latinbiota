@@ -3,7 +3,7 @@ Central repository with scripts and workflows for the analysis of the gut microb
 
 Data available in: http://ftp.ebi.ac.uk/pub/databases/metagenomics/genome_sets/latinbiota/
 
-## Main workflows
+## Main analysis workflows
 
 [VirSearch](https://github.com/alexmsalmeida/virsearch) - Searching viral sequences in metagenomes
 
