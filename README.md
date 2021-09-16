@@ -25,7 +25,7 @@ All of the following scripts are available in the `scripts/` folder of this repo
 * `samples_map_latinbiota.R`
 * `samples_metadata_latinbiota.R`
 
-### MAGs quality control and comparison with UHGG:
+### MAGs quality control and comparison with [UHGG](https://www.nature.com/articles/s41587-020-0603-3):
 
 * `mags_checkm-stats.R`
 * `mags_vs_uhgg.R`
