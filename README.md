@@ -50,6 +50,7 @@ All of the following scripts are available in the `scripts/` folder of this repo
 * `mapping_guba-prevalence.R`
 * `mapping_ml-summary.R`
 * `mapping_pca.R`
+* `mapping_geo-diversity.R`
 * `mapping_prevalence-chisq.R`
 * `mapping_prevalence-upset_gpd.R`
 * `mapping_prevalence-upset_uhgg.R`
