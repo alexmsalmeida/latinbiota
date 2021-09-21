@@ -57,3 +57,7 @@ All of the following scripts are available in the `scripts/` folder of this repo
 * `mapping_prevalence-upset_gpd.R`
 * `mapping_prevalence-upset_uhgg.R`
 
+### Functional prediction and analysis
+
+* `amr_profiles.R`
+
