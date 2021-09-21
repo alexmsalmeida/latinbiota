@@ -13,6 +13,8 @@ Data available in: http://ftp.ebi.ac.uk/pub/databases/metagenomics/genome_sets/l
 
 [metaMAP](https://github.com/alexmsalmeida/metamap) - Mapping sequencing reads to reference genomes for detecting microbial species
 
+[AMR-profiler](https://github.com/alexmsalmeida/amr-profiler) - Characterizing AMR genes in metagenomes
+
 [ml-microbiome](https://github.com/alexmsalmeida/ml-microbiome) - Machine learning pipeline for classification of microbiome data.
 
 ## Statistics and visualization
