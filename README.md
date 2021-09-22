@@ -15,7 +15,9 @@ Data available in: http://ftp.ebi.ac.uk/pub/databases/metagenomics/genome_sets/l
 
 [AMR-profiler](https://github.com/alexmsalmeida/amr-profiler) - Characterizing AMR genes in metagenomes
 
-[ml-microbiome](https://github.com/alexmsalmeida/ml-microbiome) - Machine learning pipeline for classification of microbiome data.
+[ml-microbiome](https://github.com/alexmsalmeida/ml-microbiome) - Machine learning pipeline for classification of microbiome data
+
+[Protean](https://github.com/alexmsalmeida/protean) - Functional annotation of protein sequences
 
 ## Statistics and visualization
 
