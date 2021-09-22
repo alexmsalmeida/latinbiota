@@ -1,5 +1,4 @@
 # load libraries
-library(readxl)
 library(maptools)
 library(ggplot2)
 library(grid)
