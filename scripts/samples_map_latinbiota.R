@@ -12,7 +12,7 @@ library(mapproj)
 
 # load input
 setwd("~/Documents/ESPOD/Analyses/Project_latinbiota/metadata")
-metadata = as.data.frame(read_excel("metadata_complete.xlsx"))
+metadata = read.delim("metadata_complete.tsv", stringsAsFactors = FALSE, check.names = FALSE, na.strings = "")
 rownames(metadata) = metadata$Run
 metadata = metadata[which(metadata$Study == "Latinbiota"),]
 countries = unique(metadata$Country)
@@ -42,7 +42,7 @@ wrld = subset(wrld, id != "Antarctica")
 # plot map
 map.plot = ggplot() + 
   geom_map(data=wrld, map=wrld, aes(map_id=id, x=long, y=lat), fill="white", color="darkgrey", size=0.1) + 
-  geom_map(data=ddf, map=wrld, aes(map_id=country, fill=samples_class),  color="darkgrey", size=0.2, alpha=0.7) + 
+  geom_map(data=ddf, map=wrld, aes(map_id=country, fill=samples_class),  color="black", size=0.2, alpha=0.7) + 
   scale_fill_manual(values=c("darkolivegreen1", "chartreuse3", "darkolivegreen4", "darkgreen"), name="Number of samples") +
   coord_map() + 
   labs(x="", y="") +
@@ -53,4 +53,4 @@ map.plot = ggplot() +
         axis.text = element_blank(),
         axis.ticks = element_blank(),
         legend.position = "bottom")
-ggsave("map_latinbiota.tiff", height=6, width=5, dpi=300)
+ggsave("map_latinbiota.png", height=6, width=5, dpi=300)
