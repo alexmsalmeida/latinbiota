@@ -62,4 +62,6 @@ All of the following scripts are available in the `scripts/` folder of this repo
 ### Functional prediction and analysis
 
 * `amr_profiles.R`
-
+* `functions_cazy-enriched.R`
+* `functions_cog-enriched.R`
+* `functions_kegg-enriched.R`
