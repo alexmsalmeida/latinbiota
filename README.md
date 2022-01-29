@@ -19,6 +19,6 @@ Central repository with scripts and workflows for the analysis of the gut microb
 
 ## Custom scripts
 
-* Directory `scripts/data_processing` contains R scripts used to parse and process data for analysis and plotting
+* Directory `scripts/data_processing` contains R scripts used to parse and process data for analysis
 
 * Directory `scripts/plotting` R scripts used to generate figures for manuscript
