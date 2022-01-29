@@ -17,49 +17,8 @@ Central repository with scripts and workflows for the analysis of the gut microb
 
 [Protean](https://github.com/alexmsalmeida/protean) - Functional annotation of protein sequences
 
-## Statistics and visualization
+## Custom scripts
 
-All of the following scripts are available in the `scripts/` folder of this repo.
+* Directory `scripts/data_processing` contains R scripts used to parse and process data for analysis and plotting
 
-### Sample distribution and metadata:
-
-* `samples_map_all.R`
-* `samples_map_latinbiota.R`
-* `samples_metadata_latinbiota.R`
-
-### MAGs quality control and comparison with the [UHGG](https://www.nature.com/articles/s41587-020-0603-3) catalog:
-
-* `mags_checkm-stats.R`
-* `mags_vs_uhgg.R`
-* `mags_qs-comparison.R`
-* `bacteria_phylo-diversity.R`
-
-### Viral prediction, clustering and classification:
-
-* `viruses_predicted_upset.R`
-* `viruses_taxonomy.R`
-* `viruses_cov-threshold.R`
-* `viruses_clustering_venn.R`
-
-### Taxonomic diversity analysis
-
-* `mapping_cutoffs.R`
-* `mapping_kingdom-classification.R`
-* `mapping_alpha-div.R`
-* `mapping_euks-prevalence.R`
-* `mapping_feat-heatmap_gpd.R`
-* `mapping_feat-heatmap_uhgg.R`
-* `mapping_guba-prevalence.R`
-* `mapping_ml-summary.R`
-* `mapping_pca.R`
-* `mapping_geo-diversity.R`
-* `mapping_prevalence-chisq.R`
-* `mapping_prevalence-upset_gpd.R`
-* `mapping_prevalence-upset_uhgg.R`
-
-### Functional prediction and analysis
-
-* `amr_profiles.R`
-* `functions_cazy-enriched.R`
-* `functions_cog-enriched.R`
-* `functions_kegg-enriched.R`
+* Directory `scripts/plotting` R scripts used to generate figures for manuscript
