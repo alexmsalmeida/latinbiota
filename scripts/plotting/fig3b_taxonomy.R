@@ -24,12 +24,12 @@ demovir.prop$Set = factor(demovir.prop$Set, levels=c("Latinbiota", "Shared", "GP
 
 # plot taxonomy
 tax.plot = ggplot(demovir.prop, aes(x=Family, fill=Set, y=Freq)) +
-  geom_bar(stat="identity", colour="darkgrey", alpha=0.8) +
+  geom_bar(stat="identity", colour="darkgrey", alpha=0.8, size=0.1) +
   geom_text(aes(label=ifelse(Set=="Latinbiota", paste0(round(Prop*100,1),"%"), ""), hjust="left"), 
             position = position_stack(), hjust=-0.1) +
   coord_flip() +
   theme_classic() +
-  scale_fill_manual(values=c("darkolivegreen2", "tomato", "steelblue"), name="Genome source") +
+  scale_fill_manual(values=c("tomato", "darkolivegreen2", "steelblue"), name="Genome source") +
   scale_y_continuous(expand = expansion(mult=c(0.05, 0.1))) +
   ylab("Number of viral clusters") +
   theme(axis.title.y = element_blank(),
@@ -37,4 +37,4 @@ tax.plot = ggplot(demovir.prop, aes(x=Family, fill=Set, y=Freq)) +
         axis.text.y = element_text(size=12),
         axis.text.x = element_text(size=12),
         legend.position="top")
-ggsave("../../../Publications/2022-Latinbiota/Figures/figure3/gpd-combined_tax.pdf", height=6, width=8)
+ggsave("../../../Publications/2022-Latinbiota/Figures/figure3/gpd-combined_tax.pdf", height=5, width=7)
