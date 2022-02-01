@@ -37,10 +37,10 @@ order.taxa = c(names(sort(table(feat.taxa$Family[which(feat.taxa$Family != "Othe
 feat.taxa$Family = factor(feat.taxa$Family, levels=order.taxa)
 taxa.colors = c(brewer.pal(10, "Set3"), "darkgrey")
 names(taxa.colors) = order.taxa
-samp.geo = data.frame(Location=metadata[,"Country"], row.names=metadata[,"Run"])
+samp.geo = data.frame(Country=metadata[,"Country"], row.names=metadata[,"Run"])
 geo.colors = c("#FFD92F", "#A6D854", "#E78AC3", "#71d1ff", "#FC8D62", "#b2450a", "#3b35ce", "darkgrey")
-names(geo.colors) = sort(as.vector(unique(samp.geo$Location)))
-annot.colors = list(Family = taxa.colors, Location=geo.colors)
+names(geo.colors) = sort(as.vector(unique(samp.geo$Country)))
+annot.colors = list(Family = taxa.colors, Country=geo.colors)
 feat.heat = feat.heat[,rownames(feat.taxa)[order(feat.taxa$Family)]]
 
 # plot heatmap
