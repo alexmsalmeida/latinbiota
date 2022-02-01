@@ -16,7 +16,7 @@ latinbiota_increase = (gpd.combined - gpd)/gpd*100
 pdf(file="../../../Publications/2022-Latinbiota/Figures/figure3/venn_diagram.pdf", height=5, width=6)
 draw.pairwise.venn(area1 = gpd, area2 = latinbiota, cross.area=overlap,
                    category = c("GPD", "Latinbiota"),
-                   lty = rep("blank", 2), fill = c("plum3", "darkorange"), 
+                   lty = rep("blank", 2), fill = c("steelblue", "tomato"), 
                    alpha = rep(0.4, 2),
                    cex=1.5, fontfamily = rep("sans", 3),
                    cat.cex = 1.7, cat.fontfamily = rep("sans", 2), 
