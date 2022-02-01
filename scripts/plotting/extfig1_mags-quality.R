@@ -4,6 +4,9 @@ library(ggpubr)
 
 # load data
 setwd("~/Documents/ESPOD/Analyses/Project_latinbiota/")
+viruses = read.delim("viruses/genomes_gpd-latinbiota.tsv", stringsAsFactors = FALSE)
+viruses.latin = viruses[which(viruses$Study_set == "Latinbiota"),]
+viruses.latin$MIUVIG_quality = gsub("-", " ", viruses.latin$MIUVIG_quality)
 checkm.stats = read.delim("prokaryotes/genomes_uhgg-latinbiota.tsv", stringsAsFactors = FALSE)
 checkm.stats = checkm.stats[!grepl("GUT_GENOME", checkm.stats$Genome),]
 checkm.stats$MIMAG = ifelse(checkm.stats$Completeness > 90 & checkm.stats$Contamination < 5, "Near complete", "Medium quality")
@@ -56,7 +59,20 @@ cont.dens = ggplot(checkm.stats, aes(x=Contamination, fill=MIMAG)) +
   theme(axis.title.x = element_text(size=12)) + 
   theme(axis.text.y = element_blank())
 
+virus.len.dist = ggplot(viruses.latin, aes(x=MIUVIG_quality, y=Length, fill=MIUVIG_quality)) +
+  geom_boxplot(alpha=0.6, outlier.colour = NA) +
+  scale_fill_manual(values=c("steelblue", "darkolivegreen3"), name="") +
+  scale_y_log10(labels = scales::comma) +
+  theme_classic() + 
+  ylab("Length (bp)") +
+  theme(legend.position = "bottom") +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) + 
+  theme(axis.title.y = element_text(size=14)) + 
+  theme(axis.text.y = element_text(size=12)) + 
+  theme(axis.text.x = element_text(size=12)) + 
+  theme(axis.title.x = element_blank())
+
 # arrange plots
-ggarrange(ggarrange(comp.dens, ncol=2, widths=c(4,1)), ggarrange(scatter.plot, cont.dens, ncol=2, nrow=1, widths=c(4,1), common.legend = TRUE, legend="bottom"), 
-          ncol=1, nrow=2, heights=c(1,3.5))
-ggsave("../../../Publications/2022-Latinbiota/Figures/extfig1/mag_quality.pdf", height=6, width=8)
+ggarrange(ggarrange(ggarrange(comp.dens, ncol=2, widths=c(4,1)), ggarrange(scatter.plot, cont.dens, ncol=2, nrow=1, widths=c(4,1), common.legend = TRUE, legend="bottom"), 
+          ncol=1, nrow=2, heights=c(1,3.5)), virus.len.dist, nrow=1, ncol=2, labels = c("a", "b"), font.label = list(size=18), widths=c(2,1))
+ggsave("../../../Publications/2022-Latinbiota/Figures/extfig1/ExtendedData_Figure1.pdf", height=6, width=11)
