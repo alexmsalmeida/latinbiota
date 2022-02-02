@@ -57,7 +57,7 @@ box.plot.all = ggplot(all.stats.healthy, aes(x=reorder(Continent, -UHGG_Diversit
   guides(fill="none") +
   theme_bw() +
   scale_fill_manual(values=c("#FFD92F", "#A6D854", "#E78AC3", "#b2450a", "#8DA0CB", "#FC8D62")) +
-  ylab("Alpha diversity (Shannon)") +
+  ylab("Alpha diversity") +
   theme(axis.text.x = element_text(size=12)) +
   theme(axis.title.y = element_blank()) +
   theme(axis.text.y = element_text(size=12)) +
@@ -70,7 +70,7 @@ box.plot.latinbiota = ggplot(all.stats.latinbiota, aes(x=reorder(Country, -UHGG_
   geom_boxplot(outlier.shape=NA, alpha=0.8) +
   coord_flip() +
   theme_bw() +
-  ylab("Alpha diversity (Shannon)") +
+  ylab("Alpha diversity") +
   scale_fill_manual(values=c("#A6D854", "#8DA0CB")) +
   theme(legend.position = "bottom") +
   theme(axis.text.x = element_text(size=12)) +
@@ -80,9 +80,9 @@ box.plot.latinbiota = ggplot(all.stats.latinbiota, aes(x=reorder(Country, -UHGG_
   theme(panel.grid.minor.y = element_blank())
 
 # arrange and plot
-ggarrange(ggarrange(corr.plot, box.plot.all, labels=c("a", "b"), legend = "bottom", common.legend = TRUE, font.label = list(size=18), ncol=2, nrow=1), 
-          box.plot.latinbiota, widths=c(2, 1), nrow=1, labels=c("", "c"), font.label = list(size=18))
-ggsave(file="../../../Publications/2022-Latinbiota/Figures/extfig5/ExtendedData_Figure5.pdf", height=5, width=10)
+ggarrange(ggarrange(corr.plot, box.plot.all, labels=c("a", "b"), legend = "bottom", common.legend = TRUE, font.label = list(size=18), vjust = 1, ncol=2, nrow=1), 
+          box.plot.latinbiota, widths=c(2.3, 1), nrow=1, labels=c("", "c"), font.label = list(size=18), vjust = 1)
+ggsave(file="../../../Publications/2022-Latinbiota/Figures/extfig5/ExtendedData_Figure5.pdf", height=5, width=11)
 
 # statistical tests
 corr.res = cor.test(all.stats.healthy$GPD_Diversity, all.stats.healthy$UHGG_Diversity, method="pearson")

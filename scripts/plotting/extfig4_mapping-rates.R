@@ -75,9 +75,9 @@ box.plot.all = ggplot(all.mapping.plot, aes(x=Country, y=value, fill=Continent))
   theme(axis.title.x = element_blank()) +
   theme(axis.text.y = element_text(size=12)) +
   theme(axis.title.y = element_text(size=14)) +
-  theme(strip.background=element_rect(fill="lightgrey", color=NA),
+  theme(strip.background=element_rect(fill=NA, color=NA),
           strip.text=element_text(size=16)) +
-  theme(panel.grid.minor.y = element_blank())
+  theme(panel.grid.minor.y = element_blank(), panel.grid.minor.x = element_blank())
 
 box.plot.improv = ggplot(improv.mapping.plot, aes(x=reorder(Country, -value, FUN=median), y=value, fill=Continent)) +
   geom_boxplot(outlier.shape=NA) +
@@ -91,11 +91,11 @@ box.plot.improv = ggplot(improv.mapping.plot, aes(x=reorder(Country, -value, FUN
   theme(axis.title.x = element_blank()) +
   theme(axis.text.y = element_text(size=12)) +
   theme(axis.title.y = element_text(size=14)) +
-  theme(strip.background=element_rect(fill="lightgrey", color=NA),
+  theme(strip.background=element_rect(fill=NA, color=NA),
         strip.text=element_text(size=16)) +
-  theme(panel.grid.minor.y = element_blank())
+  theme(panel.grid.minor.y = element_blank(), panel.grid.minor.x = element_blank())
 
 # arrange and save
 ggarrange(box.plot.all, box.plot.improv, ncol=1, nrow=2, labels = c("a", "b"), common.legend = TRUE,
-          font.label = list(size = 24, color = "black", face = "bold", family = NULL))
+          font.label = list(size = 24, color = "black", face = "bold", family = NULL), hjust=0.03, vjust=0.1)
 ggsave(file="../../../Publications/2022-Latinbiota/Figures/extfig4/ExtendedData_Figure4.pdf", height=12, width=14)
