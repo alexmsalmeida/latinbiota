@@ -4,7 +4,7 @@ library(ggpubr)
 
 # load data
 setwd("~/Documents/ESPOD/Analyses/Project_latinbiota")
-dnadiff.uhgg = read.delim("prokaryotes/mags_vs_uhgg-all_besthits_filt.tsv", header=TRUE, stringsAsFactors = FALSE)
+dnadiff.uhgg = read.delim("prokaryotes/mags_vs_uhgg.tsv", header=TRUE, stringsAsFactors = FALSE)
 genome2species = read.delim("../Project_resource/genomes-all_metadata.tsv", stringsAsFactors = FALSE)[,c("Genome","Species_rep")]
 gtdb.tk = read.delim("../Project_resource/species_taxonomy.tab")
 colnames(gtdb.tk)[1] = "UHGG_species"

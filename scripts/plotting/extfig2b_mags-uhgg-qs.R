@@ -4,7 +4,7 @@ library(ggpubr)
 
 # load data
 setwd("~/Documents/ESPOD/Analyses/Project_latinbiota/")
-dnadiff.uhgg = read.delim("prokaryotes/mags_vs_uhgg-all_besthits_filt.tsv", header=TRUE, stringsAsFactors = FALSE)
+dnadiff.uhgg = read.delim("prokaryotes/mags_vs_uhgg.tsv", header=TRUE, stringsAsFactors = FALSE)
 checkm.stats = read.delim("prokaryotes/genomes_uhgg-latinbiota.tsv", stringsAsFactors = FALSE)
 genome2species = read.delim("../Project_resource/genomes-all_metadata.tsv", stringsAsFactors = FALSE)[,c("Genome", "Genome_type", "Species_rep")]
 
