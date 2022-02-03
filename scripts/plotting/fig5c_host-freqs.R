@@ -5,7 +5,10 @@ library(tidyr)
 
 # load data
 setwd("~/Documents/ESPOD/Analyses/Project_latinbiota")
-host.bacteria.tax.filt = read.delim("viruses/vcontact/virus_host_summary.tsv", header=TRUE, stringsAsFactors = FALSE)
+host.bacteria.tax.filt = read.delim("viruses/species_bacterial-hosts.tsv", header=TRUE, stringsAsFactors = FALSE)
+chisq.res = read.delim("viruses/mapping/chisq_viruses_latinbiota.tsv", stringsAsFactors = FALSE)
+chisq.res = chisq.res[which(chisq.res$result == "Higher"),"Genome"]
+host.bacteria.tax.filt = host.bacteria.tax.filt[which(host.bacteria.tax.filt$Viral.species %in% chisq.res),]
 
 # parse taxonomy
 keep.taxa = sort(names(sort(table(host.bacteria.tax.filt$Family), decreasing=TRUE)[1:10]))
