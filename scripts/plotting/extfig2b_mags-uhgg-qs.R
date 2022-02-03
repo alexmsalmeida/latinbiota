@@ -6,7 +6,7 @@ library(ggpubr)
 setwd("~/Documents/ESPOD/Analyses/Project_latinbiota/")
 dnadiff.uhgg = read.delim("prokaryotes/mags_vs_uhgg.tsv", header=TRUE, stringsAsFactors = FALSE)
 checkm.stats = read.delim("prokaryotes/genomes_uhgg-latinbiota.tsv", stringsAsFactors = FALSE)
-genome2species = read.delim("../Project_resource/genomes-all_metadata.tsv", stringsAsFactors = FALSE)[,c("Genome", "Genome_type", "Species_rep")]
+genome2species = read.delim("http://ftp.ebi.ac.uk/pub/databases/metagenomics/mgnify_genomes/human-gut/v1.0/genomes-all_metadata.tsv", stringsAsFactors = FALSE)[,c("Genome", "Genome_type", "Species_rep")]
 
 # prepare dataset
 dnadiff.uhgg$UHGG_species = genome2species$Species_rep[match(dnadiff.uhgg$ref, genome2species$Genome)]

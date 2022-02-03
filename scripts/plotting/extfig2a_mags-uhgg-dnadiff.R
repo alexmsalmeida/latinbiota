@@ -5,13 +5,10 @@ library(ggpubr)
 # load data
 setwd("~/Documents/ESPOD/Analyses/Project_latinbiota")
 dnadiff.uhgg = read.delim("prokaryotes/mags_vs_uhgg.tsv", header=TRUE, stringsAsFactors = FALSE)
-genome2species = read.delim("../Project_resource/genomes-all_metadata.tsv", stringsAsFactors = FALSE)[,c("Genome","Species_rep")]
-gtdb.tk = read.delim("../Project_resource/species_taxonomy.tab")
-colnames(gtdb.tk)[1] = "UHGG_species"
+uhgg.metadata = read.delim("http://ftp.ebi.ac.uk/pub/databases/metagenomics/mgnify_genomes/human-gut/v1.0/genomes-all_metadata.tsv", stringsAsFactors = FALSE)
 
 # prepare dataset
-dnadiff.uhgg$UHGG_species = genome2species$Species_rep[match(dnadiff.uhgg$ref, genome2species$Genome)]
-dnadiff.uhgg = merge(dnadiff.uhgg, gtdb.tk, by="UHGG_species")
+dnadiff.uhgg$Species_rep = uhgg.metadata$Species_rep[match(dnadiff.uhgg$ref, uhgg.metadata$Genome)]
 dnadiff.uhgg$af_max = apply(dnadiff.uhgg[,c("ref_cov", "qry_cov")], 1, max)
 dnadiff.uhgg$Match = ifelse(dnadiff.uhgg$af_max >= 80 & dnadiff.uhgg$ani >= 99, "Strain match",
                             ifelse(dnadiff.uhgg$af_max >= 30 & dnadiff.uhgg$ani >= 95, "Species match",
