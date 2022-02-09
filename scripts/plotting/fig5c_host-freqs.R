@@ -32,4 +32,4 @@ host.plot = ggplot(df, aes(x=Family, y=Counts, fill=Family)) +
   theme(axis.text.y = element_text(size=12)) +
   theme(axis.title.x = element_text(size=14)) +
   theme(axis.title.y = element_blank())
-ggsave("../../../Publications/2022-Latinbiota/Figures/figure5/host_counts.pdf", width=7, height=5)
+ggsave("../../../Publications/2022-Latinbiota/Figures/figure5/host_counts.pdf", width=6, height=5)
