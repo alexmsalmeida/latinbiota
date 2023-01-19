@@ -22,5 +22,3 @@ Central repository with scripts and workflows for the analysis of the gut microb
 * Directory `scripts/data_processing` contains R scripts used to parse and process data for analysis
 
 * Directory `scripts/plotting` R scripts used to generate figures for manuscript
-
-Data needed to run scripts can be found in: http://ftp.ebi.ac.uk/pub/databases/metagenomics/genome_sets/latinbiota/
